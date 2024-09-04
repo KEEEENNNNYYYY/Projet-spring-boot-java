@@ -5,3 +5,11 @@
 - Gestion des retards chez HEI avec java
 - CRUD : API rest 
   
+(
+###    API rest:
+    RestController
+    public class [...]
+    GetMapping(/)
+    function[...]
+
+)
