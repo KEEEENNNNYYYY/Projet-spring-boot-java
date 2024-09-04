@@ -8,9 +8,9 @@
   
 (
 ###    API rest:
-    RestController
+    @RestController
     public class [...]
-    GetMapping(/)
+    @GetMapping(/)
     function[...]
 
 ### java to json: 
