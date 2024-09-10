@@ -1,11 +1,15 @@
 package hei.school.kenny.todoliste.Models;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Todo {
+public class AllTasks implements Serializable {
 
     private Connection connectToDb(String dbname, String user, String pass) {
         Connection conn = null;
@@ -27,7 +31,7 @@ public class Todo {
     public String fetchTasks() {
         Connection conn = connectToDb("todolistjava", "postgres", "0000");
 
-        StringBuilder result = new StringBuilder();
+        JSONArray tasksArray = new JSONArray();
         if (conn != null) {
             try {
                 Statement stmt = conn.createStatement();
@@ -35,13 +39,11 @@ public class Todo {
                 ResultSet rs = stmt.executeQuery(query);
 
                 while (rs.next()) {
-                    String id = rs.getString("id");
-                    String name = rs.getString("name");
-                    String state = rs.getString("state");
-                    result.append("ID: ").append(id)
-                            .append(", Name: ").append(name)
-                            .append(", State: ").append(state)
-                            .append("\n");
+                    JSONObject taskObject = new JSONObject();
+                    taskObject.put("id", rs.getString("id"));
+                    taskObject.put("name", rs.getString("name"));
+                    taskObject.put("state", rs.getString("state"));
+                    tasksArray.put(taskObject);
                 }
 
                 rs.close();
@@ -51,6 +53,6 @@ public class Todo {
                 e.printStackTrace();
             }
         }
-        return result.toString();
+        return tasksArray.toString(2);
     }
 }
