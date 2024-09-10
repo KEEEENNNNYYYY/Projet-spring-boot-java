@@ -1,16 +1,14 @@
 package hei.school.kenny.todoliste.Controller;
 
-import hei.school.kenny.todoliste.Models.Todo;
+import hei.school.kenny.todoliste.Models.AllTasks;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TodoController {
-    @GetMapping("/todos")
-    public String getAllTask(){
-        Todo todo = new Todo();
-        System.out.println("/todos here");
-        return todo.fetchTasks();
-
+public class AllTasksController {
+    @GetMapping("/Alltasks")
+    public StringBuilder getAllTask(){
+        AllTasks allTasks = new AllTasks();
+        return new StringBuilder(allTasks.fetchTasks());
     }
 }
