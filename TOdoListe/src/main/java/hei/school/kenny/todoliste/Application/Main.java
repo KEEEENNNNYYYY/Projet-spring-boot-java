@@ -1,13 +1,20 @@
-package hei.school.kenny.todoliste;
+package hei.school.kenny.todoliste.Application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class TOdoListeApplication {
+@ComponentScan({
+        "hei.school.kenny.todoliste.Application",
+        "hei.school.kenny.todoliste.Controller",
+        "hei.school.kenny.todoliste.Models"
+})
+
+public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(TOdoListeApplication.class, args);
+        SpringApplication.run(Main.class, args);
     }
 
 }
