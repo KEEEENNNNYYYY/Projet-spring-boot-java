@@ -1,5 +1,6 @@
-package hei.school.kenny.todoliste;
+package hei.school.kenny.todoliste.Controller;
 
+import hei.school.kenny.todoliste.Models.Todo;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

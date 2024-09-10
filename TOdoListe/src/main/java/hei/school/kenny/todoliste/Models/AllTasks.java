@@ -1,4 +1,4 @@
-package hei.school.kenny.todoliste;
+package hei.school.kenny.todoliste.Models;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
