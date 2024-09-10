@@ -8,7 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan({
         "hei.school.kenny.todoliste.Application",
         "hei.school.kenny.todoliste.Controller",
-        "hei.school.kenny.todoliste.Models"
+        "hei.school.kenny.todoliste.service",
+        "hei.school.kenny.todoliste.DAO"
 })
 
 public class Main {
