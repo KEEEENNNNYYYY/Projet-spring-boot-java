@@ -1,4 +1,11 @@
 # Projet-spring-boot-java
+
+## to do for 11/9 : 
+- enum on postgres
+- get task by state
+- researches for 9/11 day,
+
+
 # devoir : 
 - faire en sorte que les endpoints,suivant avec la chaine controller service,DAO fonctionne
 - les endpoints: 
