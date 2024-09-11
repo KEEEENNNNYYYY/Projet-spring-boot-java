@@ -3,7 +3,6 @@ package hei.school.kenny.todoliste.DAO;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.io.Serializable;
 import java.sql.Connection;
